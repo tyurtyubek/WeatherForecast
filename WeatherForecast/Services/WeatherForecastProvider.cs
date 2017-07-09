@@ -6,20 +6,21 @@ using System.Linq;
 using System.Web;
 using System.Net;
 using System.Net.Http;
+using System.Configuration;
 
 namespace WeatherForecast.Services
 {
-    public class WeatherForecastProvider
+    public class WeatherForecastProvider : IWeatherForecastProvider
     {
-        private readonly string apiKey = "421cd20af77e3b17cb60061874c5c88f";
-
-        public RootObject GetWeatherForecastJson(string cityoflist , int days, string cityOwn)
+        public RootObject GetWeatherForecastJson(string cityoflist, int days, string cityOwn)
         {
-            string city = "";
-            if (cityOwn == "")
-                city = cityoflist;
-            else city = cityOwn;
-            string openwmApiUrl =  $"http://api.openweathermap.org/data/2.5/forecast/daily?q={city}&cnt={days}&APPID={apiKey}&units=metric";
+            string apiKey = ConfigurationManager.AppSettings["apiKey"];
+            string baseUrl = ConfigurationManager.AppSettings["baseUrl"];
+
+            string city = cityOwn != "" ? cityOwn : cityoflist;
+
+            string openwmApiUrl = $"{baseUrl}q={city}&cnt={days}&APPID={apiKey}&units=metric";
+
             var client = new HttpClient();
             var json = client.GetStringAsync(openwmApiUrl).Result;
             return JsonConvert.DeserializeObject<RootObject>(json);
