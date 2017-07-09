@@ -56,9 +56,4 @@ namespace WeatherForecast.Models
         public int cnt { get; set; }
         public List<List> list { get; set; }
     }
-
-    public class ForecastForDay
-    {
-        
-    }
 }

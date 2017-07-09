@@ -12,15 +12,14 @@ namespace WeatherForecast.Services
 {
     public class WeatherForecastProvider : IWeatherForecastProvider
     {
-        
-        string apiKey = ConfigurationManager.AppSettings["apiKey"];
-        string baseUrl = ConfigurationManager.AppSettings["baseUrl"];
-
-        public RootObject GetWeatherForecastJson(string cityoflist , int days, string cityOwn)
+        public RootObject GetWeatherForecastJson(string cityoflist, int days, string cityOwn)
         {
+            string apiKey = ConfigurationManager.AppSettings["apiKey"];
+            string baseUrl = ConfigurationManager.AppSettings["baseUrl"];
+
             string city = cityOwn != "" ? cityOwn : cityoflist;
 
-            string openwmApiUrl =  $"{baseUrl}q={city}&cnt={days}&APPID={apiKey}&units=metric";
+            string openwmApiUrl = $"{baseUrl}q={city}&cnt={days}&APPID={apiKey}&units=metric";
 
             var client = new HttpClient();
             var json = client.GetStringAsync(openwmApiUrl).Result;
