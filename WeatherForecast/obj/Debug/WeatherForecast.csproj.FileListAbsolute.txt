@@ -72,3 +72,10 @@ C:\Projects\WeatherForecast\WeatherForecast\bin\ru\System.Web.WebPages.Razor.res
 C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.dll
 C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.pdb
 C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.csprojResolveAssemblyReference.cache
+C:\Projects\WeatherForecast\WeatherForecast\bin\Ninject.dll
+C:\Projects\WeatherForecast\WeatherForecast\bin\Ninject.Web.Common.dll
+C:\Projects\WeatherForecast\WeatherForecast\bin\Ninject.Web.Mvc.dll
+C:\Projects\WeatherForecast\WeatherForecast\bin\WebActivatorEx.dll
+C:\Projects\WeatherForecast\WeatherForecast\bin\Ninject.xml
+C:\Projects\WeatherForecast\WeatherForecast\bin\Ninject.Web.Common.xml
+C:\Projects\WeatherForecast\WeatherForecast\bin\Ninject.Web.Mvc.xml

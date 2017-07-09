@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Ninject;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,6 +10,12 @@ namespace WeatherForecast.Controllers
 {
     public class HomeController : Controller
     {
+        IWeatherForecastProvider _weather;
+
+        public HomeController(IWeatherForecastProvider weather)
+        {
+            _weather = weather;
+        }
 
         private readonly List<string> cities = new List<string> { "Kiev", "Lviv", "Kharkiv", "Dnipropetrovsk", "Odessa" };
         public ActionResult Index()
@@ -52,8 +59,9 @@ namespace WeatherForecast.Controllers
         [HttpGet]
         public ActionResult GetForecast(string cityoflist, string cityOwn, string daysnumb)
         {
-            WeatherForecastProvider weather = new WeatherForecastProvider();
-            var model = weather.GetWeatherForecastJson(cityoflist, Convert.ToInt32(daysnumb), cityOwn);
+            
+            //WeatherForecastProvider weather = new WeatherForecastProvider();
+            var model = _weather.GetWeatherForecastJson(cityoflist, Convert.ToInt32(daysnumb), cityOwn);
             return View("GetForecast", model);
             return model == null ? View("Error") : View("GetForecast", model);
         }

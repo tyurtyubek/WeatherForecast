@@ -10,8 +10,9 @@ using System.Configuration;
 
 namespace WeatherForecast.Services
 {
-    public class WeatherForecastProvider
+    public class WeatherForecastProvider : IWeatherForecastProvider
     {
+        
         string apiKey = ConfigurationManager.AppSettings["apiKey"];
         string baseUrl = ConfigurationManager.AppSettings["baseUrl"];
 
