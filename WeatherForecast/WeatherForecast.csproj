@@ -160,12 +160,23 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Context\CitiesContext.cs" />
+    <Compile Include="Context\IWeatherRepository.cs" />
+    <Compile Include="Context\TheWeatherContext.cs" />
+    <Compile Include="Context\WeatherRepository.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Migrations\201707110956195_InitialMigration.cs" />
+    <Compile Include="Migrations\201707110956195_InitialMigration.Designer.cs">
+      <DependentUpon>201707110956195_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707112025258_Delete Date column.cs" />
+    <Compile Include="Migrations\201707112025258_Delete Date column.Designer.cs">
+      <DependentUpon>201707112025258_Delete Date column.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SavedCity.cs" />
     <Compile Include="Models\WeatherJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -227,6 +238,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707110956195_InitialMigration.resx">
+      <DependentUpon>201707110956195_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707112025258_Delete Date column.resx">
+      <DependentUpon>201707112025258_Delete Date column.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

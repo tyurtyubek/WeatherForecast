@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace WeatherForecast.Models
 {
+    [Table("Cities")]
     public class SavedCity
     {
-        public int SavedCityID { get; set; }
+        [Key]
+        public int Id { get; set; }
+        [Required]
         public string CityName { get; set; }
-        public DateTime Created { get; set; }
     }
 }

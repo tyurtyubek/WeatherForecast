@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace WeatherForecast.Context
 {
-    public class CitiesContext : DbContext
+    public class TheWeatherContext : DbContext
     {
-        public CitiesContext():base("name = DBConnectionCity") 
+        public TheWeatherContext():base("name = DefaultConnection") 
         {
         }
-        public DbSet<SavedCity> SavedCities {get; set;}
+        public DbSet<SavedCity> Cities {get; set;}
     }
 }
