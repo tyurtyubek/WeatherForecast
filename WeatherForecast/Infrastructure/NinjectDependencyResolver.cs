@@ -33,6 +33,7 @@ namespace WeatherForecast.Infrastructure
         private void AddBindings()
         {
             _kernel.Bind<IWeatherForecastProvider>().To<WeatherForecastProvider>();
+
         }
     }
 }

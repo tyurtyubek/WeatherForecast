@@ -79,3 +79,7 @@ C:\Projects\WeatherForecast\WeatherForecast\bin\WebActivatorEx.dll
 C:\Projects\WeatherForecast\WeatherForecast\bin\Ninject.xml
 C:\Projects\WeatherForecast\WeatherForecast\bin\Ninject.Web.Common.xml
 C:\Projects\WeatherForecast\WeatherForecast\bin\Ninject.Web.Mvc.xml
+C:\Projects\WeatherForecast\WeatherForecast\bin\EntityFramework.dll
+C:\Projects\WeatherForecast\WeatherForecast\bin\EntityFramework.SqlServer.dll
+C:\Projects\WeatherForecast\WeatherForecast\bin\EntityFramework.xml
+C:\Projects\WeatherForecast\WeatherForecast\bin\EntityFramework.SqlServer.xml
