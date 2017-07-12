@@ -36,12 +36,5 @@ namespace WeatherForecast.Controllers
             return model == null ? View("Error") : View("GetForecast", model);
         }
 
-        // GET: Home/
-        [HttpGet]
-        public ActionResult GetCities()
-        {
-            IEnumerable<SavedCity> cities =  _savedCity.GetCities();
-            return View(cities);
-        }
     }
 }

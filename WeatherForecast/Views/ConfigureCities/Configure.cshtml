@@ -1,0 +1,26 @@
+﻿@model IEnumerable<WeatherForecast.Models.SavedCity>
+@{
+
+    ViewBag.Title = "Configuration of city list";
+}
+
+
+<div class="container">
+    <div class="col-md-6" style="margin-top:50px">
+        <table class="table table-hover table-condensed" style="width:80%">
+            @foreach (var city in Model)
+            {
+                <tr class="">
+                    <td class="">
+                        @Html.DisplayFor(modelItem => city.CityName, new { @class = "form-control" })
+                    </td>
+                    <td align="right">  
+                        <a href="~/ConfigureCities/Edit"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
+                        <a href="~/ConfigureCities/Delete"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+

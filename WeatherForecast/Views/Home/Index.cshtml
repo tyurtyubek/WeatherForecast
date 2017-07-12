@@ -20,8 +20,7 @@
                     Value = "7",
                 },
             };
-}
-@{
+
     var cityoflist = new List<SelectListItem>();
     foreach (var city in Model)
     {
@@ -32,9 +31,7 @@
         };
         cityoflist.Add(cityValue);
     }
-
 }
-
 
 <div class="row">
     @using (Html.BeginForm("GetForecast", "Home", FormMethod.Get))

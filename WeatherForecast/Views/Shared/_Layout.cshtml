@@ -4,9 +4,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
     <title>@ViewBag.Title Weather Forecast</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("css", required: false)
+
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -22,6 +25,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Weather", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Configure Cities", "Configure", "ConfigureCities")</li>
                 </ul>
             </div>
         </div>
