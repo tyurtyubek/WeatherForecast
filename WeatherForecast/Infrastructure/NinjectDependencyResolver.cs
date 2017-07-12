@@ -36,6 +36,7 @@ namespace WeatherForecast.Infrastructure
         {
             _kernel.Bind<IWeatherForecastProvider>().To<WeatherForecastProvider>();
             _kernel.Bind<IWeatherRepository<SavedCity>>().To<WeatherRepository>();
+            _kernel.Bind<ICityLogRepository>().To<CityLogRepository>();
         }
     }
 }

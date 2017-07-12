@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WeatherForecast.Models.CityLog>
+<div class="container">
+    <div class="col-md-8" style="margin-top:50px">
+        @if (Model != null)
+        {
+            <table class="table table-hover table-condensed" style="width:80%">
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Search Time</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CityName</td>
+                        <td>@item.RequestTime</td>
+                    </tr>
+                }
+            </table>
+        }else
+        {
+            <h2>There is no history yet</h2>
+        }
+        <div>
+            @Html.ActionLink("Clear search history", "ClearHistory")
+        </div>
+    </div>
+</div>

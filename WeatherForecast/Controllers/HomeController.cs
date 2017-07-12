@@ -13,13 +13,17 @@ namespace WeatherForecast.Controllers
 {
     public class HomeController : Controller
     {
+        ICityLogRepository _cityLog;
         IWeatherForecastProvider _weather;
         IWeatherRepository<SavedCity> _savedCity;
 
-        public HomeController(IWeatherForecastProvider weather, IWeatherRepository<SavedCity> savedCity)
+        public HomeController(IWeatherForecastProvider weather,
+                              IWeatherRepository<SavedCity> savedCity,
+                              ICityLogRepository cityLog)
         {
             _weather = weather;
             _savedCity = savedCity;
+            _cityLog = cityLog;
         }
 
         public ActionResult Index()
@@ -33,8 +37,29 @@ namespace WeatherForecast.Controllers
         public ActionResult GetForecast(string cityoflist, string cityOwn, string daysnumb)
         {
             var model = _weather.GetWeatherForecastJson(cityoflist, Convert.ToInt32(daysnumb), cityOwn);
+            string city = cityOwn != "" ? cityOwn : cityoflist;
+            _cityLog.AddLog(new CityLog
+            {
+                CityName = city,
+                RequestTime = DateTime.Now
+            });
+            _cityLog.Save();
             return model == null ? View("Error") : View("GetForecast", model);
         }
+
+        // GET: Home/CityLog
+        [HttpGet]
+        public ActionResult CityLog()
+        {
+            return View("CityLog",_cityLog.GetCitiesLog());
+        }
+
+        public ActionResult ClearHistory()
+        {
+            _cityLog.DeleteAll();
+            return View("CityLog");
+        }
+        
 
     }
 }

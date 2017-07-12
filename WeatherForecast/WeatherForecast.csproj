@@ -160,6 +160,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Context\CityLogRepository.cs" />
+    <Compile Include="Context\ICityLogRepository.cs" />
     <Compile Include="Context\IWeatherRepository.cs" />
     <Compile Include="Context\TheWeatherContext.cs" />
     <Compile Include="Context\WeatherRepository.cs" />
@@ -230,6 +232,7 @@
     <Content Include="Views\Home\GetForecast.cshtml" />
     <Content Include="Views\ConfigureCities\Configure.cshtml" />
     <Content Include="Views\ConfigureCities\AddCity.cshtml" />
+    <Content Include="Views\Home\CityLog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
