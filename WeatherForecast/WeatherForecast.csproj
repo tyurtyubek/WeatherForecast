@@ -177,7 +177,12 @@
     <Compile Include="Migrations\201707112025258_Delete Date column.Designer.cs">
       <DependentUpon>201707112025258_Delete Date column.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707121721017_NewTableCreateLog.cs" />
+    <Compile Include="Migrations\201707121721017_NewTableCreateLog.Designer.cs">
+      <DependentUpon>201707121721017_NewTableCreateLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\HistoryUserRequest.cs" />
     <Compile Include="Models\SavedCity.cs" />
     <Compile Include="Models\WeatherJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -241,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707112025258_Delete Date column.resx">
       <DependentUpon>201707112025258_Delete Date column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707121721017_NewTableCreateLog.resx">
+      <DependentUpon>201707121721017_NewTableCreateLog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

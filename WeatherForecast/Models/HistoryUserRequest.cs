@@ -1,14 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WeatherForecast.Models
 {
-    [Table("Cities")]
-    public class SavedCity
+    [Table("CityLog")]
+    public class CityLog
     {
-        [Key]
         public int Id { get; set; }
         [Required]
         public string CityName { get; set; }
+        public DateTime RequestTime { get; set; }
     }
 }

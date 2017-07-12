@@ -86,3 +86,4 @@ C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.Migrations
 C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.csproj.GenerateResource.Cache
 C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.Migrations.DeleteDatecolumn.resources
 C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.csprojResolveAssemblyReference.cache
+C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.Migrations.NewTableCreateLog.resources
