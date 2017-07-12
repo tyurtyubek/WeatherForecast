@@ -1,22 +1,6 @@
-﻿@{
+﻿@model IEnumerable<WeatherForecast.Models.SavedCity>
+@{
     ViewBag.Title = "Home Page";
-}
-
-@{
-    List<string> cities = new List<string> { "Kiev", "Lviv", "Kharkiv", "Dnipropetrovsk", "Odessa" };
-    List<SelectListItem> cityoflist = new List<SelectListItem>();
-    foreach (var city in cities)
-    {
-        var selectListItem = new SelectListItem
-        {
-            Value = city,
-            Text = city
-        };
-        cityoflist.Add(selectListItem);
-    }
-    ViewBag.Cities = cityoflist;
-}
-@{
     var daysnumbSelect = new List<SelectListItem>
             {
                 new SelectListItem
@@ -36,7 +20,17 @@
                     Value = "7",
                 },
             };
-    ViewBag.DaysNumb = daysnumbSelect;
+
+    var cityoflist = new List<SelectListItem>();
+    foreach (var city in Model)
+    {
+        var cityValue = new SelectListItem
+        {
+            Text = city.CityName,
+            Value = city.CityName
+        };
+        cityoflist.Add(cityValue);
+    }
 }
 
 <div class="row">
@@ -44,11 +38,11 @@
     {
         <div class="form-group" style="margin-top: 30px">
             <label for="cityoflist">Choose city from list or enter your own:</label>
-            @Html.DropDownList("cityoflist", (List<SelectListItem>)ViewBag.Cities, new { @class = "form-control" })
+            @Html.DropDownList("cityoflist", cityoflist, new { @class = "form-control" })
             <label for="cityOwn">Enter city:</label>
             @Html.TextBox("cityOwn", null, new { @class = "form-control" })
             <label for="daysnumb">Select numer of days you wanna forecast:</label>
-            @Html.DropDownList("daysnumb", (List<SelectListItem>)ViewBag.DaysNumb, new { @class = "form-control" })
+            @Html.DropDownList("daysnumb", daysnumbSelect, new { @class = "form-control" })
         </div>
         <input type="submit" class="btn btn-default" value="Get forecast" />
     }

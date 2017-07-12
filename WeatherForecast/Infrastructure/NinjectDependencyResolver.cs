@@ -7,6 +7,8 @@ using Ninject;
 using Ninject.Web.Common;
 using System.Web.Mvc;
 using WeatherForecast.Services;
+using WeatherForecast.Context;
+using WeatherForecast.Models;
 
 namespace WeatherForecast.Infrastructure
 {
@@ -33,6 +35,8 @@ namespace WeatherForecast.Infrastructure
         private void AddBindings()
         {
             _kernel.Bind<IWeatherForecastProvider>().To<WeatherForecastProvider>();
+            _kernel.Bind<IWeatherRepository<SavedCity>>().To<WeatherRepository>();
+            _kernel.Bind<ICityLogRepository>().To<CityLogRepository>();
         }
     }
 }
