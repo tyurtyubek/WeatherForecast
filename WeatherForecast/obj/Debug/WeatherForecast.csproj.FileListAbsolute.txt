@@ -85,3 +85,4 @@ C:\Projects\WeatherForecast\WeatherForecast\bin\EntityFramework.SqlServer.xml
 C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.Migrations.InitialMigration.resources
 C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.csproj.GenerateResource.Cache
 C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.Migrations.DeleteDatecolumn.resources
+C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.csprojResolveAssemblyReference.cache

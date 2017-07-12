@@ -13,7 +13,7 @@ namespace WeatherForecast.Context
         IEnumerable<T> GetCities();
         void AddCity(SavedCity newCity);
         bool SaveAll();
-        void DeleteCity(string cityName);
-        void UpdateCity(T city);
+        SavedCity GetById(int id);
+        void DeleteCity(int id);
     }
 }

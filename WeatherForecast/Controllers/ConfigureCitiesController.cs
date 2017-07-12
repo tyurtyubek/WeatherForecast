@@ -26,5 +26,35 @@ namespace WeatherForecast.Controllers
             IEnumerable<SavedCity> cities = _savedCity.GetCities();
             return View(cities);
         }
+
+        public ActionResult Delete(int? id)
+        {
+            _savedCity.DeleteCity(id.Value);
+            return RedirectToAction("Configure");
+        }
+
+        [HttpPost]
+        public ActionResult UpdateCity(int id, string cityName)
+        {
+            var cityUpdate = _savedCity.GetById(id);
+            cityUpdate.CityName = cityName;
+            _savedCity.SaveAll();
+            return Json(new { Udpated = true });
+        }
+
+        public ActionResult AddCity()
+        {
+            return View("AddCity");
+        }
+
+        [HttpPost]
+        public ActionResult AddCity(string cityName)
+        {
+            SavedCity newCity = new SavedCity() { CityName = cityName };
+            _savedCity.AddCity(newCity);
+            _savedCity.SaveAll();
+            return RedirectToAction("Configure");
+        }
+
     }
 }

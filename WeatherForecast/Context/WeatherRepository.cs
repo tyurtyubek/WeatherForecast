@@ -20,10 +20,11 @@ namespace WeatherForecast.Context
             _contextdb.Cities.Add(newCity);
         }
 
-        public void DeleteCity(string cityName)
+        public void DeleteCity(int id)
         {
-            SavedCity deleteCity = _contextdb.Cities.Find(cityName);
+            SavedCity deleteCity = _contextdb.Cities.Find(id);
             if (deleteCity != null) _contextdb.Cities.Remove(deleteCity);
+            SaveAll();
         }
 
         public IEnumerable<SavedCity> GetCities()
@@ -43,9 +44,9 @@ namespace WeatherForecast.Context
             return _contextdb.SaveChanges() > 0;
         }
 
-        public void UpdateCity(SavedCity city)
+        public SavedCity GetById(int id)
         {
-            throw new NotImplementedException();
+            return _contextdb.Cities.Find(id);
         }
 
         #region IDisposable Support
