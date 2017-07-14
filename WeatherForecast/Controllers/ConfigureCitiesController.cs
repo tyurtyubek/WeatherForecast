@@ -11,9 +11,9 @@ namespace WeatherForecast.Controllers
 {
     public class ConfigureCitiesController : Controller
     {
-        IWeatherRepository<SavedCity> _savedCity;
+        IRepository<SavedCity> _savedCity;
 
-        public ConfigureCitiesController(IWeatherRepository<SavedCity> savedCity)
+        public ConfigureCitiesController(IRepository<SavedCity> savedCity)
         {
             _savedCity = savedCity;
         }
@@ -23,13 +23,13 @@ namespace WeatherForecast.Controllers
         [HttpGet]
         public ActionResult Configure()
         {
-            IEnumerable<SavedCity> cities = _savedCity.GetCities();
+            IEnumerable<SavedCity> cities = _savedCity.Get();
             return View(cities);
         }
 
         public ActionResult Delete(int? id)
         {
-            _savedCity.DeleteCity(id.Value);
+            _savedCity.Delete(id.Value);
             return RedirectToAction("Configure");
         }
 
@@ -38,7 +38,7 @@ namespace WeatherForecast.Controllers
         {
             var cityUpdate = _savedCity.GetById(id);
             cityUpdate.CityName = cityName;
-            _savedCity.SaveAll();
+            _savedCity.Save();
             return Json(new { Udpated = true });
         }
 
@@ -51,8 +51,8 @@ namespace WeatherForecast.Controllers
         public ActionResult AddCity(string cityName)
         {
             SavedCity newCity = new SavedCity() { CityName = cityName };
-            _savedCity.AddCity(newCity);
-            _savedCity.SaveAll();
+            _savedCity.Add(newCity);
+            _savedCity.Save();
             return RedirectToAction("Configure");
         }
 

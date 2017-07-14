@@ -4,7 +4,7 @@ using WeatherForecast.Models;
 
 namespace WeatherForecast.Context
 {
-    public class WeatherRepository : IWeatherRepository<SavedCity>
+    public class WeatherRepository : IRepository<SavedCity>
     {
         TheWeatherContext _contextdb;
         public WeatherRepository()
@@ -12,19 +12,19 @@ namespace WeatherForecast.Context
             _contextdb = new TheWeatherContext();
         }
 
-        public void AddCity(SavedCity newCity)
+        public void Add(SavedCity newCity)
         {
             _contextdb.Cities.Add(newCity);
         }
 
-        public void DeleteCity(int id)
+        public void Delete(int id)
         {
             SavedCity deleteCity = _contextdb.Cities.Find(id);
             if (deleteCity != null) _contextdb.Cities.Remove(deleteCity);
-            SaveAll();
+            Save();
         }
 
-        public IEnumerable<SavedCity> GetCities()
+        public IEnumerable<SavedCity> Get()
         {
             try
             {
@@ -36,7 +36,7 @@ namespace WeatherForecast.Context
             }
         }
 
-        public bool SaveAll()
+        public bool Save()
         {
             return _contextdb.SaveChanges() > 0;
         }
