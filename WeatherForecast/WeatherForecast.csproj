@@ -162,7 +162,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\CityLogRepository.cs" />
     <Compile Include="Context\ICityLogRepository.cs" />
-    <Compile Include="Context\IWeatherRepository.cs" />
+    <Compile Include="Context\IRepository.cs" />
     <Compile Include="Context\TheWeatherContext.cs" />
     <Compile Include="Context\WeatherRepository.cs" />
     <Compile Include="Controllers\ConfigureCitiesController.cs" />

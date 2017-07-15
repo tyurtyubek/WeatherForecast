@@ -15,10 +15,10 @@ namespace WeatherForecast.Controllers
     {
         ICityLogRepository _cityLog;
         IWeatherForecastProvider _weather;
-        IWeatherRepository<SavedCity> _savedCity;
+        IRepository<SavedCity> _savedCity;
 
         public HomeController(IWeatherForecastProvider weather,
-                              IWeatherRepository<SavedCity> savedCity,
+                              IRepository<SavedCity> savedCity,
                               ICityLogRepository cityLog)
         {
             _weather = weather;
@@ -28,7 +28,7 @@ namespace WeatherForecast.Controllers
 
         public ActionResult Index()
         {
-            IEnumerable<SavedCity> cities = _savedCity.GetCities();
+            IEnumerable<SavedCity> cities = _savedCity.Get();
             return View(cities);
         }
 
