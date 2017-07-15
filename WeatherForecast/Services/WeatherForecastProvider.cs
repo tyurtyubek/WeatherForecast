@@ -20,10 +20,17 @@ namespace WeatherForecast.Services
             string city = cityOwn != "" ? cityOwn : cityoflist;
 
             string openwmApiUrl = $"{baseUrl}q={city}&cnt={days}&APPID={apiKey}&units=metric";
-
-            var client = new HttpClient();
-            var json = client.GetStringAsync(openwmApiUrl).Result;
-            return JsonConvert.DeserializeObject<RootObject>(json);
+            try
+            {
+                var client = new HttpClient();
+                var json = client.GetStringAsync(openwmApiUrl).Result;
+                return JsonConvert.DeserializeObject<RootObject>(json);
+            }
+            catch(Exception ex)
+            {
+                string exceptionGetforecastjson = "smth wrong" + ex.Message;
+                return null;
+            }
         }
     }
 }
