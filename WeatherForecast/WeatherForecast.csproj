@@ -169,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\CityController.cs" />
+    <Compile Include="API\HistoryController.cs" />
     <Compile Include="API\WeatherController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
