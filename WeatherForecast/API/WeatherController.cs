@@ -23,7 +23,7 @@ namespace WeatherForecast.API
             _citySearch = citySearched;
         }
 
-        // Get api/weather/Lviv/7
+        // Get /api/weather/Lviv/7
         [Route("api/Weather/{city}/{days}")]
         public IHttpActionResult Get(string city, int days)
         {
