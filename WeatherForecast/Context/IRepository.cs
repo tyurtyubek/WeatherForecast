@@ -12,5 +12,6 @@ namespace WeatherForecast.Context
         bool Save();
         T GetById(int id);
         void Delete(int id);
+        void EditCity(SavedCity city);
     }
 }
