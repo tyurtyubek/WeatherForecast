@@ -1,3 +1,5 @@
 WeatherForecast/bin
 WeatherForecast/debug
 *.suo
+.vs/
+weatherforecast.tests/inegrationtests

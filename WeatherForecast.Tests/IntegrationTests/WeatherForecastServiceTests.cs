@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using WeatherForecast.Services;
 
-namespace WeatherForecast.Tests.InegrationTests
+namespace WeatherForecast.Tests.IntegrationTests
 {
     class WeatherForecastServiceTests
     {

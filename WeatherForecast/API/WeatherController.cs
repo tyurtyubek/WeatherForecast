@@ -44,7 +44,5 @@ namespace WeatherForecast.API
             }
             return Ok(cityWeather);
         }
-
-
     }
 }
