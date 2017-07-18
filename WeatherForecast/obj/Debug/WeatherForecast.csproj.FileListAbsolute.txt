@@ -87,3 +87,11 @@ C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.csproj.Gen
 C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.Migrations.DeleteDatecolumn.resources
 C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.csprojResolveAssemblyReference.cache
 C:\Projects\WeatherForecast\WeatherForecast\obj\Debug\WeatherForecast.Migrations.NewTableCreateLog.resources
+C:\Projects\WeatherForecast\WeatherForecast\bin\System.Net.Http.Formatting.dll
+C:\Projects\WeatherForecast\WeatherForecast\bin\System.Web.Http.dll
+C:\Projects\WeatherForecast\WeatherForecast\bin\System.Web.Http.WebHost.dll
+C:\Projects\WeatherForecast\WeatherForecast\bin\System.Net.Http.Formatting.xml
+C:\Projects\WeatherForecast\WeatherForecast\bin\System.Web.Http.xml
+C:\Projects\WeatherForecast\WeatherForecast\bin\System.Web.Http.WebHost.xml
+C:\Projects\WeatherForecast\WeatherForecast\bin\Ninject.Web.WebApi.dll
+C:\Projects\WeatherForecast\WeatherForecast\bin\Ninject.Web.WebApi.xml

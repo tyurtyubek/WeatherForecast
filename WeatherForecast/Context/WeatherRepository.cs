@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using WeatherForecast.Models;
 
 namespace WeatherForecast.Context
@@ -44,6 +45,16 @@ namespace WeatherForecast.Context
         public SavedCity GetById(int id)
         {
             return _contextdb.Cities.Find(id);
+        }
+
+        public void EditCity(SavedCity city)
+        {
+            // Copy city name to value
+            var cityEdit = city;
+            cityEdit.CityName = city.CityName;
+
+            _contextdb.Entry(cityEdit).State = EntityState.Modified;
+            _contextdb.SaveChanges();
         }
 
         #region IDisposable Support

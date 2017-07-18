@@ -10,6 +10,11 @@ namespace WeatherForecast.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Ninject.Web.WebApi;
+    using System.Web.Http;
+    using WeatherForecast.Services;
+    using WeatherForecast.Context;
+    using WeatherForecast.Models;
 
     public static class NinjectWebCommon 
     {
@@ -44,8 +49,9 @@ namespace WeatherForecast.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-
+                
                 RegisterServices(kernel);
+                GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
                 return kernel;
             }
             catch

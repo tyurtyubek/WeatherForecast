@@ -1,10 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
 using WeatherForecast.Services;
-using NUnit.Framework;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace WeatherForecast.Tests.InegrationTests
 {
