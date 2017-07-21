@@ -1,24 +1,47 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿@import url('https://fonts.googleapis.com/css?family=Cantata+One');
+
+body {
+    font-family: 'Cantata One', serif;
+    font-size: 15px;
+    max-width: 100%;
+    background-image: url(/Content/Images/backgroung.jpg);
+    background-size: 100%;
+    background-repeat: repeat;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.menu-flex-container {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8adad;
+    font-size: 20px;
+    align-items: center;
+    margin-top: -50px;
+    padding: 0 0 0 50px;
+    margin-bottom: 50px;
 }
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.menu-flex-items-container {
+    margin-right: 50px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
 }
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+    .menu-flex-items-container ul li {
+        text-decoration: none;
+        border-radius: 2px;
+        color: white;
+        cursor: pointer;
+        margin-top:10px;
+        float: left;
+        list-style: none;
+        padding: 15px 10px;
+        transition: 0.3s;
+        text-decoration:none;
+    }
+        .menu-flex-items-container ul li:hover {
+            text-decoration: none;
+            background-color: #a5a0a0;
+        }
+#hgroup {
+    text-decoration: none;
 }

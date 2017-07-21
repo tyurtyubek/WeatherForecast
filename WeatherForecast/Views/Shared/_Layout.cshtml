@@ -1,36 +1,34 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/font-awesome.css" rel="stylesheet" />
     <title>@ViewBag.Title Weather Forecast</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @RenderSection("css", required: false)
+    <link rel="stylesheet" href="~/Content/Site.css" />
 
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Weather App", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Weather", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Configure Cities", "Configure", "ConfigureCities")</li>
-                    <li>@Html.ActionLink("City search history", "CityLog", "Home")</li>
-                </ul>
-            </div>
+    <header class="menu-flex-container">
+        <div class="menu-flex-item">
+            <a href="/Home" id="hgroup">
+                <img src="~/Content/Images/weather.png" alt="Weather icon" />
+                Weather App
+            </a>
         </div>
-    </div>
+        <div class="menu-flex-items-container">
+            <ul>
+                <li>@Html.ActionLink("Weather", "Index", "Home")</li>
+                <li>@Html.ActionLink("Configure Cities", "Configure", "ConfigureCities")</li>
+                <li>@Html.ActionLink("City search history", "CityLog", "Home")</li>
+            </ul>
+        </div>
+    </header>
+
+
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -40,7 +38,7 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
     @RenderSection("scripts", required: false)
 </body>
 </html>

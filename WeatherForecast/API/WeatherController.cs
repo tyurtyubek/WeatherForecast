@@ -27,11 +27,8 @@ namespace WeatherForecast.API
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             }
             if (days < 0 || days > 17) { throw new HttpResponseException(HttpStatusCode.BadRequest); }
-            if (ModelState.IsValid)
-            {
-                var cityWeather = _provider.GetWeatherForecastJson(city, days, "");
-                if (cityWeather == null) return NotFound();
-            }
+            var cityWeather = _provider.GetWeatherForecastJson(city, days, "");
+            if (cityWeather == null) return NotFound();
             try
             {
                 _citySearch.AddLog(new CityLog() { CityName = city, RequestTime = DateTime.Now });
