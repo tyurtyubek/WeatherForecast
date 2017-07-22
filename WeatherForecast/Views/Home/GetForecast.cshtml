@@ -4,20 +4,24 @@
 }
 
 <body>
-    <h2>@Model.city.name</h2>
-    <p>The weather in @Model.city.name @Model.city.country</p>
+    <div id="forecast_city">
+        <h2>@Model.city.name</h2>
+        <p>The weather in @Model.city.name @Model.city.country</p>
+    </div>
     @foreach (var weatherDay in Model.list)
     {
         var date = new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime().AddSeconds(weatherDay.dt).ToShortDateString();
-        var icon = $"http://openweathermap.org/img/w/{weatherDay.weather.Select(w=>w.icon).FirstOrDefault()}.png";
-        <h3>Date: @date <img src="@icon"></h3>
-        <ul class="list-group">
-            <li class="list-group-item">Day temperature:     @weatherDay.temp.day </li>
-            <li class="list-group-item">Morning temperature: @weatherDay.temp.morn</li>
-            <li class="list-group-item">Night temperature:   @weatherDay.temp.night</li>
-            <li class="list-group-item">Humidity:            @weatherDay.humidity</li>
-            <li class="list-group-item">Wind Speed:          @weatherDay.speed</li>
-        </ul>
+        var icon = $"http://openweathermap.org/img/w/{weatherDay.weather.Select(w => w.icon).FirstOrDefault()}.png";
+        <div class="forecast_wrapper">
+            <h3>Date: @date <img src="@icon"></h3>
+            <ul>
+                <li>Day temperature:     @weatherDay.temp.day </li>
+                <li>Morning temperature: @weatherDay.temp.morn</li>
+                <li>Night temperature:   @weatherDay.temp.night</li>
+                <li>Humidity:            @weatherDay.humidity</li>
+                <li id="wind">Wind Speed:@weatherDay.speed</li>
+            </ul>
+        </div>
     }
 </body>
 
