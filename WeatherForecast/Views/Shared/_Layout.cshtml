@@ -14,7 +14,7 @@
 <body>
     <header class="menu-flex-container">
         <div class="menu-flex-item">
-            <a href="/Home" id="hgroup">
+            <a href="/Home" id="logo">
                 <img src="~/Content/Images/weather.png" alt="Weather icon" />
                 Weather App
             </a>
@@ -28,14 +28,22 @@
         </div>
     </header>
 
-
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year – Weather forecast application</p>
-        </footer>
     </div>
+        <footer class="footer-flex-container">
+            <div id="footer-info">
+                <p>Weather forecast company </p>
+                <p>With is U can always find actual weather forescat</p>
+                <p>&copy; @DateTime.Now.Year –  All Rights Reserved.</p>
+            </div>
+            <div id="footer-contact">
+                <p>03058, Ukraine</p>
+                <p>Kiev, prosp. Kosmonavta Komarova 1</p>
+                <p>(044)406-79-01</p>
+            </div>
+        </footer>
+   
 
     @Scripts.Render("~/bundles/jquery")
     @*@Scripts.Render("~/bundles/bootstrap")*@
