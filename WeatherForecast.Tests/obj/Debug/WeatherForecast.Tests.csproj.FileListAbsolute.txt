@@ -41,6 +41,14 @@ C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\WeatherForecast.Test
 C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\FakeItEasy.dll
 C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\FakeItEasy.pdb
 C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\FakeItEasy.xml
+C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\System.Net.Http.Formatting.dll
+C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\System.Web.Http.dll
+C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\System.Web.Http.WebHost.dll
+C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\Ninject.Web.WebApi.dll
+C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\System.Net.Http.Formatting.xml
+C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\System.Web.Http.xml
+C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\System.Web.Http.WebHost.xml
+C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\Ninject.Web.WebApi.xml
 C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\roslyn\csc.exe
 C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\roslyn\csc.exe.config
 C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\roslyn\csc.rsp
@@ -67,11 +75,3 @@ C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\roslyn\vbc.exe.confi
 C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\roslyn\vbc.rsp
 C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\roslyn\VBCSCompiler.exe
 C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
-C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\System.Net.Http.Formatting.dll
-C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\System.Web.Http.dll
-C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\System.Web.Http.WebHost.dll
-C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\Ninject.Web.WebApi.dll
-C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\System.Net.Http.Formatting.xml
-C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\System.Web.Http.xml
-C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\System.Web.Http.WebHost.xml
-C:\Projects\WeatherForecast\WeatherForecast.Tests\bin\Debug\Ninject.Web.WebApi.xml

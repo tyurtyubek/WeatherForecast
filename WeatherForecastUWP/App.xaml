@@ -4,5 +4,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WeatherForecastUWP"
     RequestedTheme="Light">
-
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <local:ViewModelLocator x:Key="Locator"/>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
