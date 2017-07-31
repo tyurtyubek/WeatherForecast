@@ -45,8 +45,7 @@ namespace WeatherForecastUWP.ViewModels
             get { return _days.ToString(); }
             set { _days = Convert.ToInt32(value); }
         }
-
-    
+   
         private RootObject _weatherforecast;
         public RootObject WeatherForecast
         {

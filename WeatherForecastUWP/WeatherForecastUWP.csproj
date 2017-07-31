@@ -96,6 +96,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\DataFormatConverter.cs" />
+    <Compile Include="Converters\IconPathConverter.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -115,6 +117,25 @@
     <None Include="WeatherForecastUWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Icons\01d.png" />
+    <Content Include="Assets\Icons\01n.png" />
+    <Content Include="Assets\Icons\02d.png" />
+    <Content Include="Assets\Icons\02n.png" />
+    <Content Include="Assets\Icons\03d - Копировать.png" />
+    <Content Include="Assets\Icons\03d.png" />
+    <Content Include="Assets\Icons\03n.png" />
+    <Content Include="Assets\Icons\04d.png" />
+    <Content Include="Assets\Icons\04n.png" />
+    <Content Include="Assets\Icons\09d.png" />
+    <Content Include="Assets\Icons\09n.png" />
+    <Content Include="Assets\Icons\10d.png" />
+    <Content Include="Assets\Icons\10n.png" />
+    <Content Include="Assets\Icons\11d.png" />
+    <Content Include="Assets\Icons\11n.png" />
+    <Content Include="Assets\Icons\13d.png" />
+    <Content Include="Assets\Icons\13n.png" />
+    <Content Include="Assets\Icons\50d.png" />
+    <Content Include="Assets\Icons\50n.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
