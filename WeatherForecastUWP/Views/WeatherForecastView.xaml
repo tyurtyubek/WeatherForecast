@@ -23,36 +23,45 @@
             <RowDefinition Height="41*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <ComboBox 
+                x:Name="comboCities" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Width="150" 
+                Height="32"
+                Grid.Row="0" 
+                ItemsSource="{Binding SavedCities}"
+                SelectedValue="{Binding CityName, Mode=TwoWay}"
+                Margin="77,74,0,0"/>
         <TextBox Text="{Binding CityName, Mode=TwoWay}" 
                 HorizontalAlignment="Left" 
-                 Margin="48,74,0,0" 
+                 Margin="254,74,0,0" 
                  Grid.Row="0" 
                  Foreground="White"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top" 
                  RenderTransformOrigin="-3.803,-0.375" 
-                 PlaceholderText="City" Width="100" Background="#666CE4FF" Height="32"/>
+                 PlaceholderText="City" Width="172" Background="#666CE4FF" Height="32"/>
         <TextBox Text="{Binding Days, Mode=TwoWay}" 
                  HorizontalAlignment="Left"
-                 Margin="196,74,0,0"
+                 Margin="449,74,0,0"
                  Grid.Row="0" 
                  Foreground="White"
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top"
                  PlaceholderText="Text"
-                 Width="100" Height="32"/>
+                 Width="121" Height="32"/>
         <Button Content="Get Weather"
                 Command="{Binding SearchWeather}"
                 HorizontalAlignment="Left" 
-                Margin="359,74,0,0" 
+                Margin="583,74,0,0" 
                 VerticalAlignment="Top"
                 Width="108"/>
         <TextBlock Text="{Binding Result}"
             HorizontalAlignment="Left"
-            Margin="545,80,0,0"
+            Margin="822,80,0,0"
             TextWrapping="Wrap" 
-            VerticalAlignment="Top" 
-            SelectionChanged="TextBlock_SelectionChanged"/>
+            VerticalAlignment="Top"/>
         <ListView ItemsSource="{Binding WeatherForecast.list}" Margin="87,218,116,52" >
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -147,5 +156,10 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <TextBlock HorizontalAlignment="Left" Margin="77,40,0,0" TextWrapping="Wrap" Text="Choose city from list" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="77,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="254,40,0,0" TextWrapping="Wrap" Text="Enter city" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="449,40,0,0" TextWrapping="Wrap" Text="Enter Days" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>

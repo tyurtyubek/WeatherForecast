@@ -11,15 +11,14 @@ namespace WeatherForecastUWP.Services
 {
     public class WeatherForecastService
     {
+
         string baseUrl = "http://localhost:45829";
 
         public async Task<RootObject> GetWeatherForecast(string city, int days)
         {
             using (var client = new HttpClient())
             {
-                var _day = days;
-                var _city = city;
-                if (_city == null)  city = "Kiev";
+                if (city == null)  city = "Kiev";
 
                 client.BaseAddress = new Uri(baseUrl);
                 client.DefaultRequestHeaders.Accept.Clear();
@@ -31,6 +30,26 @@ namespace WeatherForecastUWP.Services
                     return JsonConvert.DeserializeObject<RootObject>(jsonstring);
                 }
                 catch(Exception ex)
+                {
+                    string exceptionGetforecastjson = "smth wrong" + ex.Message;
+                    return null;
+                }
+            }
+        }
+
+        public async Task<IEnumerable<SavedCity>> GetSavedCities()
+        {
+            using(var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(baseUrl);
+                var json = await client.GetAsync($"api/city");
+                var jsonstring = await json.Content.ReadAsStringAsync();
+                try
+                {
+                    var jsonObject = JsonConvert.DeserializeObject<IEnumerable<SavedCity>>(jsonstring);
+                    return jsonObject;
+                }
+                catch (Exception ex)
                 {
                     string exceptionGetforecastjson = "smth wrong" + ex.Message;
                     return null;
