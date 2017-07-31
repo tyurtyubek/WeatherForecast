@@ -7,7 +7,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     DataContext="{Binding WeatherForecastVMInstance, Source={StaticResource Locator}}">
-
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -17,7 +16,7 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="41*" />
-            <RowDefinition Height="139*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <TextBox Text="{Binding CityName, Mode=TwoWay}" 
                 HorizontalAlignment="Left" 
@@ -43,5 +42,11 @@
                 Margin="359,74,0,0" 
                 VerticalAlignment="Top"
                 Width="108"/>
+        <TextBlock Text="{Binding Result}"
+            HorizontalAlignment="Left"
+            Margin="545,80,0,0"
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            SelectionChanged="TextBlock_SelectionChanged"/>
     </Grid>
 </Page>

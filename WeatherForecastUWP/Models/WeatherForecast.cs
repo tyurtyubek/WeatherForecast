@@ -4,56 +4,56 @@ namespace WeatherForecastUWP.Models
 {
     public class Coord
     {
-        public double Lon { get; set; }
-        public double Lat { get; set; }
+        public double lon { get; set; }
+        public double lat { get; set; }
     }
 
     public class City
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public Coord Coord { get; set; }
-        public string Country { get; set; }
-        public int Population { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public Coord coord { get; set; }
+        public string country { get; set; }
+        public int population { get; set; }
     }
 
     public class Temp
     {
-        public double Day { get; set; }
-        public double Min { get; set; }
-        public double Max { get; set; }
-        public double Night { get; set; }
-        public double Eve { get; set; }
-        public double Morn { get; set; }
+        public double day { get; set; }
+        public double min { get; set; }
+        public double max { get; set; }
+        public double night { get; set; }
+        public double eve { get; set; }
+        public double morn { get; set; }
     }
 
     public class Weather
     {
-        public int Id { get; set; }
-        public string Main { get; set; }
-        public string Description { get; set; }
-        public string Icon { get; set; }
+        public int id { get; set; }
+        public string main { get; set; }
+        public string description { get; set; }
+        public string icon { get; set; }
     }
 
     public class List
     {
-        public int Dt { get; set; }
-        public Temp Temp { get; set; }
-        public double Pressure { get; set; }
-        public int Humidity { get; set; }
-        public List<Weather> Weather { get; set; }
-        public double Speed { get; set; }
-        public int Deg { get; set; }
-        public int Clouds { get; set; }
-        public double Rain { get; set; }
+        public int dt { get; set; }
+        public Temp temp { get; set; }
+        public double pressure { get; set; }
+        public int humidity { get; set; }
+        public List<Weather> weather { get; set; }
+        public double speed { get; set; }
+        public int deg { get; set; }
+        public int clouds { get; set; }
+        public double rain { get; set; }
     }
 
     public class RootObject
     {
-        public City City { get; set; }
-        public string Cod { get; set; }
-        public double Message { get; set; }
-        public int Cnt { get; set; }
-        public List<List> List { get; set; }
+        public City city { get; set; }
+        public string cod { get; set; }
+        public double message { get; set; }
+        public int cnt { get; set; }
+        public List<List> list { get; set; }
     }
 }

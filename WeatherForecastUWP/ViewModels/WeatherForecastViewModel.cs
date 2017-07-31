@@ -17,7 +17,6 @@ namespace WeatherForecastUWP.ViewModels
     {
         private WeatherForecastService _service;
         private INavigationService _navigationService;
-        public ObservableCollection<RootObject> _weather { get; set; }
         public ICommand SearchWeather { get; set; }
 
         public WeatherForecastViewModel(INavigationService navigationService)
@@ -26,7 +25,7 @@ namespace WeatherForecastUWP.ViewModels
             _navigationService = navigationService;
             SearchWeather = new RelayCommand(GetWeatherForecast);
             CityName = "";
-            Days = "";
+            Days = "1";
         }
 
         private string _cityName;
@@ -47,10 +46,33 @@ namespace WeatherForecastUWP.ViewModels
             set { _days = Convert.ToInt32(value); }
         }
 
-        private async void GetWeatherForecast()
+    
+        private RootObject _weatherforecast;
+        public RootObject WeatherForecast
         {
-            var weathers = (ICollection)await _service.GetWeatherForecast(_cityName, _days);
+            get { return _weatherforecast; }
+            set
+            {
+                _weatherforecast = value;
+                RaisePropertyChanged(() => WeatherForecast);
+            }
         }
 
+        private async void GetWeatherForecast()
+        {
+            WeatherForecast = await _service.GetWeatherForecast(_cityName, _days);
+            Result = $"Weather forecast for {WeatherForecast.list.Count} days for {WeatherForecast.city.name}";
+        }
+
+        private string _result;
+        public string Result
+        {
+            get { return _result; }
+            set
+            {
+                _result = value;
+                RaisePropertyChanged(() => Result);
+            }
+        }
     }
 }
