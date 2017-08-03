@@ -9,6 +9,7 @@ using System.Web.Http.Results;
 using WeatherForecast.Context;
 using WeatherForecast.Models;
 using System.Web.Http.Cors;
+using System.Threading.Tasks;
 
 namespace WeatherForecast.API
 {
@@ -21,25 +22,26 @@ namespace WeatherForecast.API
         {
             _city = city;
         }
-        
+
         //Get api/city/id
+
         [ResponseType(typeof(City))]
-        public IHttpActionResult Get(int Id)
+        public async Task<IHttpActionResult> GetCityAsync(int Id)
         {
-            var cityById = _city.GetById(Id);
+            var cityById = await _city.GetByIdAsync(Id);
 
             return Ok(cityById);
         }
 
         //Get  api/city
-        public IEnumerable<SavedCity> GetCities()
+        public IEnumerable<SavedCity> GetCitiesAsync()
         {
             return _city.Get();
         }
 
         // POST api/city
         [HttpPost]
-        public StatusCodeResult PostCity([FromBody]SavedCity city)
+        public IHttpActionResult PostCityAsync([FromBody]SavedCity city)
         {
             if (city == null)
             {
@@ -59,7 +61,7 @@ namespace WeatherForecast.API
 
         // PUT api/city
         [HttpPut]
-        public IHttpActionResult Put([FromBody]SavedCity city)
+        public IHttpActionResult PutAsync([FromBody]SavedCity city)
         {
             if (city == null)
             {
@@ -76,7 +78,7 @@ namespace WeatherForecast.API
 
         // Delete api/city/24
         [HttpDelete]
-        public IHttpActionResult HttpDelete(int id)
+        public async Task<IHttpActionResult> HttpDelete(int id)
         {
             if (id <= 0)
             {
@@ -84,7 +86,7 @@ namespace WeatherForecast.API
             }
             if (ModelState.IsValid)
             {
-                _city.Delete(id);
+                await _city.DeleteAsync(id);
                 _city.Save();
                 return new StatusCodeResult(HttpStatusCode.OK, this);
             }

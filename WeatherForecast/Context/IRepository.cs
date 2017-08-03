@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using WeatherForecast.Models;
 
 namespace WeatherForecast.Context
@@ -10,8 +11,8 @@ namespace WeatherForecast.Context
         IEnumerable<T> Get();
         void Add(T newCity);
         bool Save();
-        T GetById(int id);
-        void Delete(int id);
+        Task<T> GetByIdAsync(int id);
+        Task DeleteAsync(int id);
         void EditCity(SavedCity city);
     }
 }

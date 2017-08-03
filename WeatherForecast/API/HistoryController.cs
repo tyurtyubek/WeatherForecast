@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Results;
@@ -25,7 +26,7 @@ namespace WeatherForecast.API
         }
         //Delete /api/history
         [HttpDelete]
-        public StatusCodeResult DeleteHistory()
+        public StatusCodeResult DeleteHistoryAsync()
         {
             _citySearch.DeleteAll();
             _citySearch.Save();

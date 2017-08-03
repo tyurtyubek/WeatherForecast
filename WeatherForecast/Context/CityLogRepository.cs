@@ -20,9 +20,9 @@ namespace WeatherForecast.Context
             _contextCityLog.CitiesLogs.Add(newCity);
         }
 
-        public void DeleteCity(int id)
+        public async Task DeleteCityAsync(int id)
         {
-            CityLog deleteCity = _contextCityLog.CitiesLogs.Find(id);
+            CityLog deleteCity = await _contextCityLog.CitiesLogs.FindAsync(id);
             if (deleteCity != null) _contextCityLog.CitiesLogs.Remove(deleteCity);
             Save();
         }
@@ -46,6 +46,7 @@ namespace WeatherForecast.Context
             }
             _contextCityLog.SaveChanges();
         }
+
         public void Save()
         {
             _contextCityLog.SaveChanges();

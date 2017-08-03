@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using WeatherForecast.Context;
 using WeatherForecast.Models;
@@ -25,14 +26,14 @@ namespace WeatherForecast.Controllers
 
         public ActionResult Delete(int? id)
         {
-            _savedCity.Delete(id.Value);
+            _savedCity.DeleteAsync(id.Value);
             return RedirectToAction("Configure");
         }
 
         [HttpPost]
-        public ActionResult UpdateCity(int id, string cityName)
+        public async Task<ActionResult> UpdateCityAsynk(int id, string cityName)
         {
-            var cityUpdate = _savedCity.GetById(id);
+            var cityUpdate = await _savedCity.GetByIdAsync(id);
             cityUpdate.CityName = cityName;
             _savedCity.Save();
             return Json(new { Udpated = true });

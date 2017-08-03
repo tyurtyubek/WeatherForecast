@@ -1,9 +1,10 @@
-﻿using WeatherForecast.Models;
+﻿using System.Threading.Tasks;
+using WeatherForecast.Models;
 
 namespace WeatherForecast.Services
 {
     public interface IWeatherForecastProvider
     {
-        RootObject GetWeatherForecastJson(string cityoflist, int days, string cityOwn);
+        Task<RootObject> GetWeatherForecastJsonAsync(string cityoflist, int days, string cityOwn);
     }
 }

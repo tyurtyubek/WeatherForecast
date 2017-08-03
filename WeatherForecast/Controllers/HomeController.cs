@@ -8,6 +8,7 @@ using WeatherForecast.Services;
 using WeatherForecast.Models;
 using System.Net;
 using WeatherForecast.Context;
+using System.Threading.Tasks;
 
 namespace WeatherForecast.Controllers
 {
@@ -34,10 +35,10 @@ namespace WeatherForecast.Controllers
 
         // GET: Home/GetForecast
         [HttpGet]
-        public ActionResult GetForecast(string cityoflist, string cityOwn, string daysnumb)
+        public async Task<ActionResult> GetForecast(string cityoflist, string cityOwn, string daysnumb)
         {
-            var model = _weather.GetWeatherForecastJson(cityoflist, Convert.ToInt32(daysnumb), cityOwn);
             string city = cityOwn != "" ? cityOwn : cityoflist;
+            var model = await _weather.GetWeatherForecastJsonAsync(cityoflist, Convert.ToInt32(daysnumb), cityOwn);
             _cityLog.AddLog(new CityLog
             {
                 CityName = city,

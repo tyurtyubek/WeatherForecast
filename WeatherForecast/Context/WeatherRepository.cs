@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Threading.Tasks;
 using WeatherForecast.Models;
 
 namespace WeatherForecast.Context
@@ -18,9 +19,9 @@ namespace WeatherForecast.Context
             _contextdb.Cities.Add(newCity);
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            SavedCity deleteCity = _contextdb.Cities.Find(id);
+            SavedCity deleteCity = await _contextdb.Cities.FindAsync(id);
             if (deleteCity != null) _contextdb.Cities.Remove(deleteCity);
             Save();
         }
@@ -42,9 +43,9 @@ namespace WeatherForecast.Context
             return _contextdb.SaveChanges() > 0;
         }
 
-        public SavedCity GetById(int id)
+        public async Task<SavedCity> GetByIdAsync(int id)
         {
-            return _contextdb.Cities.Find(id);
+            return await _contextdb.Cities.FindAsync(id);
         }
 
         public void EditCity(SavedCity city)
