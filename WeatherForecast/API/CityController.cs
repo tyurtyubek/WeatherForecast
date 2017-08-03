@@ -8,9 +8,11 @@ using System.Web.Http.Description;
 using System.Web.Http.Results;
 using WeatherForecast.Context;
 using WeatherForecast.Models;
+using System.Web.Http.Cors;
 
 namespace WeatherForecast.API
 {
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class CityController : ApiController
     {
         IRepository<SavedCity> _city;
@@ -74,15 +76,15 @@ namespace WeatherForecast.API
 
         // Delete api/city/24
         [HttpDelete]
-        public IHttpActionResult HttpDelete([FromBody]SavedCity city)
+        public IHttpActionResult HttpDelete(int id)
         {
-            if (city == null)
+            if (id <= 0)
             {
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             }
             if (ModelState.IsValid)
             {
-                _city.Delete(city.Id);
+                _city.Delete(id);
                 _city.Save();
                 return new StatusCodeResult(HttpStatusCode.OK, this);
             }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace WeatherForecast.App_Start
@@ -15,6 +10,8 @@ namespace WeatherForecast.App_Start
             // Web API configuration and services
 
             // Web API routes
+            config.EnableCors();
+
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

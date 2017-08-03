@@ -95,3 +95,6 @@ C:\Projects\WeatherForecast\WeatherForecast\bin\System.Web.Http.xml
 C:\Projects\WeatherForecast\WeatherForecast\bin\System.Web.Http.WebHost.xml
 C:\Projects\WeatherForecast\WeatherForecast\bin\Ninject.Web.WebApi.dll
 C:\Projects\WeatherForecast\WeatherForecast\bin\Ninject.Web.WebApi.xml
+C:\Projects\WeatherForecast\WeatherForecast\bin\System.Web.Cors.dll
+C:\Projects\WeatherForecast\WeatherForecast\bin\System.Web.Http.Cors.dll
+C:\Projects\WeatherForecast\WeatherForecast\bin\System.Web.Http.Cors.xml

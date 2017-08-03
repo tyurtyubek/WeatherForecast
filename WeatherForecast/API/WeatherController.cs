@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Net;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using WeatherForecast.Context;
 using WeatherForecast.Models;
 using WeatherForecast.Services;
 
 namespace WeatherForecast.API
 {
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class WeatherController : ApiController
-    {
+    {   
         private IWeatherForecastProvider _provider;
         private ICityLogRepository _citySearch;
 
